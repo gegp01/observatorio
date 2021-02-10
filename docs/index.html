@@ -34,7 +34,6 @@
 			font-size: 40px;
 		}
 
-
     	.card {
     		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     		background:#f4f6f7;
@@ -46,13 +45,40 @@
     		opacity:1;
     	}
 
-    	.sticky {
+    	.sticky_chat {
       		position: fixed;
-      		top: 3%;
-      		left:5%;
+      		top: 10%;
+      		left:3%;
       		width: 90%;
       		margin:auto;
       	}
+
+		 .collapsible_chat {
+		  color: #0B243B;
+		  cursor: pointer;
+		  padding: 9px;
+		  width: 70px;
+		  border: none;
+		  text-align: center;
+		  outline: none;
+		  font-size: 15px;
+		  background-color: transparent;
+		}
+		    
+		.active_chat, .collapsible_chat:hover {
+		  box-shadow: 0 12px 16px 0 rgba(127,255,212, 0.24), 0 17px 50px 0 rgba(127,255,212, 0.19);
+		  background-color:rgba(127,255,212, 0.24);
+		  color: #f4f6f7;
+		}
+		.content_chat{
+		  padding: 0 0px;
+		  width: 100%;
+		  max-width:400px;
+		  max-height: 0;
+		  overflow: hidden;
+		  transition: max-height 0.2s ease-out;
+		  background-color: transparent;
+		}
 
 	</style>
 
@@ -73,7 +99,7 @@
 
 	 <div class="header_1">
 
-		Observatorio de vacunas contra Covid-19 UNAM
+		Observatorio de vacunas contra Covid-19: Ciudad de México
 		<br><br>
 		<img src="logo_C3.png" width=150px align="left">
 		<img src="logoPUIS-página.png" width=120px align="right"><br>
@@ -83,14 +109,14 @@
 
 		<div class="row">
 
-			<a href="index_2_FAQ.html"><div class="card border-primary mb-3 offset-1" style="width:300px">
+			<a href="index_2_FAQ.html"><div class="card border-primary mb-3 offset-1" style="width:300px;">
 				<div class="card-header" style=""><h3>Información General</h3></div>
 				<div class="card-body">
 					<p class="card-text">Información para el usuario general, F.A.Q., fases que debe superar una vacuna, tipos de vacunas en desarrollo y métodos de acción, contiene enlaces a información sobre COVID</p></a>
 				</div></a>
 			</div>
 
-			<div class="card border-primary mb-3 offset-1" style="width:300px">
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
 				<div class="card-header" style=""><h3>Información especializada</h3></div>
 				<div class="card-body">
 					<p class="card-text">Contiene información para especialistas, Investigadores líderes, Instituciones líderes, Países líderes, Investigación Latinoamericana, Investigación en México, Interfaz de vigilancia colaborativa</p><!--/a-->
@@ -98,14 +124,14 @@
 			</div>
 
 
-			<div class="card border-primary mb-3 offset-1" style="width:300px">
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
 				<div class="card-header" style=""><h3>Rastreador de Vacunas</h3></div>
 				<div class="card-body">
 					<p class="card-text">Interfaz permanente, rastreador de la vacuna y su fase de desarrollo</p>
 				</div>
 			</div>
 
-			<div class="card border-primary mb-3 offset-1" style="width:300px">
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
 				<div class="card-header" style=""><h3>Enlaces</h3></div>
 				<div class="card-body">
 					<p class="card-text">Información fija, contiene enlaces a sitios de interés relacionados con Vacunas y COVID-19</p>
@@ -122,7 +148,7 @@
 				</div>
 			</div>			
 
-			<div class="card border-primary mb-3 offset-1" style="width:300px">
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
 				<div class="card-header" style=""><h3>Actualidad</h3></div>
 				<div class="card-body">
 					<p class="card-text">Títulos de investigaciones y sus enlaces, actualización diaria, Alimentación de RSS de revistas específicas o de PubMed, despliegue de 30 (con Scroll) en la interfaz inicial</p>
@@ -133,7 +159,7 @@
 				</div>
 			</div>
 
-			<div class="card border-primary mb-3 offset-1" style="width:300px">
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
 				<div class="card-header" style=""><h3>Noticias</h3></div>
 				<div class="card-body">
 					<p class="card-text">Títulos de noticias y sus enlaces, actualización diaria, Alimentación de RSS de periódicos elevantes, despliegue de 30 (con Scroll) en la interfaz inicial</p>
@@ -145,9 +171,32 @@
 
 		</div>
 
+	<div class="sticky_chat">
+      <button class="collapsible_chat">
+      	<img src="chat_logo.png" width=50px>
+      </button>
+    <div class="content_chat" style="background-color: beige; opacity:1; color:black;">Hola, <br><br>Aquí habrá un chat para preguntar a un especialista en Salud.<br><br></div>
+    </div>
+
 
 
 <br><br>
+
+	<script>
+	var coll = document.getElementsByClassName("collapsible_chat");
+	var i;
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+	    this.classList.toggle("active_chat");
+	    var content = this.nextElementSibling;
+	    if (content.style.maxHeight){
+	      content.style.maxHeight = null;
+	    } else {
+	      content.style.maxHeight = content.scrollHeight + "px";
+	    } 
+	  });
+	}
+	</script>
 
 
 </body>

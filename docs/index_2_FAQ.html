@@ -81,23 +81,54 @@
       		width: 50%;
       	}
 
+    	.sticky_chat {
+      		position: fixed;
+      		top: 10%;
+      		left:3%;
+      		width: 90%;
+      		margin:auto;
+      	}
 
+		 .collapsible_chat {
+		  color: #0B243B;
+		  cursor: pointer;
+		  padding: 9px;
+		  width: 70px;
+		  border: none;
+		  text-align: center;
+		  outline: none;
+		  font-size: 15px;
+		  background-color: transparent;
+		}
+		    
+		.active_chat, .collapsible_chat:hover {
+		  box-shadow: 0 12px 16px 0 rgba(127,255,212, 0.24), 0 17px 50px 0 rgba(127,255,212, 0.19);
+		  background-color:rgba(127,255,212, 0.24);
+		  color: #f4f6f7;
+		}
+		.content_chat{
+		  padding: 0 0px;
+		  width: 100%;
+		  max-width:400px;
+		  max-height: 0;
+		  overflow: hidden;
+		  transition: max-height 0.2s ease-out;
+		  background-color: transparent;
+		}
 
 	</style>
 
-	<!--script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> //background-image: url('unam_covid.jpg');</script-->
 
 </head>
 
 <body>
 	 <a href="index.html">
-	 	<div class="header_1">Observatorio de vacunas contra Covid-19 UNAM
+	 	<div class="header_1">Observatorio de vacunas contra Covid-19: Ciudad de México
 		<br><br>
 		<img src="logo_C3.png" width=150px align="left">
 		<img src="logoPUIS-página.png" width=120px align="right">
 	 </div>
-	 <!--div class="header_2 sticky">Observatorio de vacunas contra Covid-19 UNAM
-	 </div--></a>
+</a>
 
 <br><br><br>
 
@@ -122,15 +153,29 @@
 			</div>
 		</div>
 
+	<div class="sticky_chat">
+      <button class="collapsible_chat">
+      	<img src="chat_logo.png" width=50px>
+      </button>
+    <div class="content_chat" style="background-color: beige; opacity:1; color:black;">Hola, <br><br>Aquí habrá un chat para preguntar a un especialista en Salud.<br><br></div>
+    </div>
 
 
-
-
-
-
-		<!--iframe src="https://symbiontit.c3.unam.mx" style="width:100%; border:0;">			
-		</iframe-->
-
+	<script>
+	var coll = document.getElementsByClassName("collapsible_chat");
+	var i;
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+	    this.classList.toggle("active_chat");
+	    var content = this.nextElementSibling;
+	    if (content.style.maxHeight){
+	      content.style.maxHeight = null;
+	    } else {
+	      content.style.maxHeight = content.scrollHeight + "px";
+	    } 
+	  });
+	}
+	</script>
 
 
 </body>
