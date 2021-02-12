@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Observatorio de vacunas</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://symbiontit.c3.unam.mx/css/spacelab/bootstrap.min.css">
+
+	<style>
+
+		body {
+			background: "white"
+			background-image: url('');
+			opacity:1;
+		}
+
+		.header_1 {
+			padding: 90px;
+			text-align: center;
+			background: #1c3d6c;
+			opacity: 0.7;
+			color: white;
+			font-size: 40px;
+		}
+
+		.header_2 {
+			padding: 90px;
+			text-align: center;
+			background: #1c3d6c;
+			opacity: 0.7;
+			color: white;
+			font-size: 40px;
+		}
+
+    	.card {
+    		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    		background:black;
+    		opacity: 0.7;
+    		width: 370px !important;
+    	}
+
+    	.card:hover {
+    		background:white;
+    		opacity:1;
+    	}
+
+    	.sticky_chat {
+      		position: fixed;
+      		top: 10%;
+      		left:3%;
+      		width: 90%;
+      		margin:auto;
+      	}
+
+		 .collapsible_chat {
+		  color: #0B243B;
+		  cursor: pointer;
+		  padding: 9px;
+		  width: 70px;
+		  border: none;
+		  text-align: center;
+		  outline: none;
+		  font-size: 15px;
+		  background-color: transparent;
+		}
+		    
+		.active_chat, .collapsible_chat:hover {
+		  box-shadow: 0 12px 16px 0 rgba(127,255,212, 0.24), 0 17px 50px 0 rgba(127,255,212, 0.19);
+		  background-color:rgba(127,255,212, 0.24);
+		  color: #f4f6f7;
+		}
+		.content_chat{
+		  padding: 0 0px;
+		  width: 100%;
+		  max-width:400px;
+		  max-height: 0;
+		  overflow: hidden;
+		  transition: max-height 0.2s ease-out;
+		  background-color: transparent;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	 <a href="index.html">
+	 	<div class="header_1">Observatorio de vacunas contra Covid-19: Ciudad de México
+		<br><br>
+		<img src="logo_C3.png" width=150px align="left">
+		<img src="logoPUIS-página.png" width=120px align="right">
+	 </div>
+	</a>
+
+
+<!-- lista de vacunas APROBADAS -->
+		<div style="background:lightgreen;">
+			<br><h2 align="center">Vacunas aprobadas por la COFEPRIS</h2>
+			<br><br>
+
+		<div class="row">
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
+				<div class="card-header" style=""><h4>BNT162b2</h4></div>
+				<div class="card-body">
+					<p class="card-text">
+						Productor: Pfizer / BioNTech </br>
+						Tipo: nRNA</br>
+						Número de dosis: 2</br>
+						Eficacia global (sin distingo de variantes circulantes) vs enfermedad : 95%</br>
+						Eficacia > 1a. Dosis vs enfermedad : ?</br></p>
+				</div>
+			</div>
+
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
+				<div class="card-header" style=""><h4>ChAdOx1-S (AZD1222)</h4></div>
+				<div class="card-body">
+					<p class="card-text">
+						Productor: AstraZeneca </br>
+						Tipo: nRNA</br>
+						Número de dosis: 2</br>
+						Eficacia global (sin distingo de variantes circulantes) vs enfermedad : 95%</br>
+						Eficacia > 1a. Dosis vs enfermedad : ?</br></p>
+				</div>
+			</div>
+
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
+				<div class="card-header" style=""><h4>Sputnik V (Gam-COVID-Vac)</h4></div>
+				<div class="card-body">
+					<p class="card-text">
+						Productor: Instituto Gamaleya </br>
+						Tipo: Ad26/Ad25 (vectores no replicantes)</br>
+						Número de dosis: 2</br>
+						Eficacia global (sin distingo de variantes circulantes) vs enfermedad : 91.6%</br>
+						Eficacia > 1a. Dosis vs enfermedad : 73%</br></p>
+				</div>
+			</div>
+
+		</div>	
+
+<br>
+</div>
+
+<br><br>
+
+<!-- lista de vacunas APROBADAS -->
+
+		<h2 align="center">Vacunas no aprobadas por la COFEPRIS</h2>
+
+<br><br>
+
+		<div class="row">
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
+				<div class="card-header" style=""><h3>M-RNA-1273</h3></div>
+				<div class="card-body">
+					<p class="card-text">
+						Productor: Moderna </br>
+						Tipo: Ad chimpancé (vector no replicante)</br>
+						Número de dosis: 2</br>
+						Eficacia global (sin distingo de variantes circulantes) vs enfermedad : 54.9% a 82.4%</br>
+						Eficacia > 1a. Dosis vs enfermedad : 76%</br></p>
+				</div>
+			</div>
+
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
+				<div class="card-header" style=""><h3>Coronavac</h3></div>
+				<div class="card-body">
+					<p class="card-text">
+						Productor: Sinovac </br>
+						Tipo: inactivada</br>
+						Número de dosis: 2</br>
+						Eficacia global (sin distingo de variantes circulantes) vs enfermedad : 50.4% </br>
+						Eficacia > 1a. Dosis vs enfermedad : ?</br></p>
+				</div>
+			</div>
+
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
+				<div class="card-header" style=""><h3>CanSino Bio (Gam-COVID-Vac)</h3></div>
+				<div class="card-body">
+					<p class="card-text">
+						Productor: CanSino Bio </br>
+						Tipo: Ad5</br>
+						Número de dosis: 1</br>
+						Eficacia global (sin distingo de variantes circulantes) vs enfermedad : ?</br>
+						Eficacia > 1a. Dosis vs enfermedad : ?</br></p>
+				</div>
+			</div>
+
+
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
+				<div class="card-header" style=""><h3>Ad26COVS1</h3></div>
+				<div class="card-body">
+					<p class="card-text">
+						Productor: Johnson & Johnson (Janssen) </br>
+						Tipo: Ad26 (vector no replicante)</br>
+						Número de dosis: 1</br>
+						Eficacia global (sin distingo de variantes circulantes) vs enfermedad : 66.6%</br>
+						Eficacia > 1a. Dosis vs enfermedad : ?</br></p>
+				</div>
+			</div>
+
+
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
+				<div class="card-header" style=""><h3>CVnCoV</h3></div>
+				<div class="card-body">
+					<p class="card-text">
+						Productor: Curevac </br>
+						Tipo: mRNA</br>
+						Número de dosis: 2</br>
+						Eficacia global (sin distingo de variantes circulantes) vs enfermedad : ?</br>
+						Eficacia > 1a. Dosis vs enfermedad : ?</br></p>
+				</div>
+			</div>			
+
+
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
+				<div class="card-header" style=""><h3>NVX-CoV2373</h3></div>
+				<div class="card-body">
+					<p class="card-text">
+						Productor: Novavax </br>
+						Tipo: Proteína recomb. (Spike) en Baculovirus</br>
+						Número de dosis: 2</br>
+						Eficacia global (sin distingo de variantes circulantes) vs enfermedad : 89.3%</br>
+						Eficacia > 1a. Dosis vs enfermedad : ?</br></p>
+				</div>
+			</div>
+
+
+			<div class="card border-primary mb-3 offset-1" style="width:300px;">
+				<div class="card-header" style=""><h3>Sinopharm</h3></div>
+				<div class="card-body">
+					<p class="card-text">
+						Productor: Instituto Gamaleya </br>
+						Tipo: Ad26/Ad25 (vectores no replicantes)</br>
+						Número de dosis: 2</br>
+						Eficacia global (sin distingo de variantes circulantes) vs enfermedad : 79.3%</br>
+						Eficacia > 1a. Dosis vs enfermedad : ?</br></p>
+				</div>
+
+		</div>
+
+			</div>
+
+<br>
+				<div align="center">Fuente de Información:<br>
+Archivos del Dr. Carlos Federico Arias Ortiz, <br>Investigador del Instituto de Biotecnología de la Universidad Nacional Autónoma de México. <br>Febrero 2021</div>
+
+
+		</div>
+
+
+<!-- lugar para el chat -->
+
+	<div class="sticky_chat">
+      <button class="collapsible_chat">
+      	<img src="chat_logo.png" width=50px>
+      </button>
+    <div class="content_chat" style="background-color: beige; opacity:1; color:black;">Hola, <br><br>Aquí habrá un chat para preguntar a un especialista en Salud.<br><br></div>
+    </div>
+
+
+
+<br><br>
+
+	<script>
+	var coll = document.getElementsByClassName("collapsible_chat");
+	var i;
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+	    this.classList.toggle("active_chat");
+	    var content = this.nextElementSibling;
+	    if (content.style.maxHeight){
+	      content.style.maxHeight = null;
+	    } else {
+	      content.style.maxHeight = content.scrollHeight + "px";
+	    } 
+	  });
+	}
+	</script>
+
+
+</body>
+</html>
