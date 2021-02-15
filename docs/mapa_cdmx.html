@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Covid-19 en CDMX</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!--link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" /-->
+  
+  <!--link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script-->
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
+		
+		html, body, #map {
+			height: 100%;
+			width: 100%;
+		}
+		.leaflet-popup-content-wrapper{
+			background-color: azure;
+			opacity: 0.7;
+		}
+		
+		.leaflet-popup-tip {
+			background: royalblue;
+		}
+
+	</style>
+</head>
+	
+<body>
+	<div id='map'></div>
+	<script src="https://symbiontit.c3.unam.mx/mun.geojson"></script>
+	<script src="https://symbiontit.c3.unam.mx/coronavirusapp.geojson"></script>
+	
+	<script type="text/javascript">
+	
+	function style_Rt(feature) {
+		return {
+			weight: 2,
+			opacity: 1,
+			color: 'transparent',
+			dashArray: '3',
+			fillOpacity: 0.5,
+			fillColor: feature.properties.Rt_col
+		};
+	}
+	
+
+	function style_decesos_tot(feature) {
+		return {
+			weight: 2,
+			opacity: 1,
+			color: 'transparent',
+			dashArray: '3',
+			fillOpacity: 0.3,
+			fillColor: feature.properties.dead_col
+		};
+	}
+	
+	function style_infectados(feature) {
+		return {
+			weight: 2,
+			opacity: 1,
+			color: 'transparent',
+			// dashArray: '3',
+			fillOpacity: 0.5,
+			fillColor: feature.properties.inf15d10mil_col
+		};
+	}	
+
+	
+	function onEachFeature(feature, layer) {
+		layer.bindPopup(
+			"<b>municipio: </b>" +
+			feature.properties.MUNICIPIO +
+			"<br><b>entidad: </b>" +
+			feature.properties.ENTIDAD +
+			"<br><b>infectados activos: </b>" +
+			Math.round(feature.properties.inf15d*10) +
+			"<br><b>aumento en contagios (Rt): </b>" +
+			Math.round(feature.properties.Rt*100)/100 +
+			"<br><b>decesos totales: </b>" +
+			feature.properties.dead +
+			"<br>fecha de actualización: </b>" +
+			feature.properties.FECHA_DATOS
+
+		)
+	}	
+	 
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+	    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+	    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2VncCIsImEiOiJjamt1bjR6dDkwMDRvM3hvOHdwOGVlNmdqIn0.sCmUZr_hp4SZPKdcE88OYA';
+	var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox/light-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr}),
+		streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+
+	var infectados;
+	var infectados = new L.geoJson(XDATA, {style:style_infectados, onEachFeature: onEachFeature});
+	
+	var Rt;
+	var Rt = new L.geoJson(XDATA, {style: style_Rt, onEachFeature: onEachFeature});
+	
+	var decesos_tot;
+	var decesos_tot = new L.geoJson(XDATA, {style:style_decesos_tot, onEachFeature: onEachFeature});
+	
+	var covidapp;
+	var covidapp = new L.geoJson(covidapp, {
+		pointToLayer: function(feature, latlng) {
+			return new L.CircleMarker(latlng, {radius: 4, fillOpacity: 0.5, color:'#38f6f9'});
+		},
+		onEachFeature: function (feature, layer) {
+			    layer.bindPopup(
+				"<b>participaciones: </b>" +
+				feature.properties.reportes)
+			    }
+		
+	});
+	
+
+	var baseLayers = {
+		"mapa base": grayscale,
+		"calles": streets
+	};
+
+	var overlays = {
+		"infectados activos": infectados,
+		"decesos totales": decesos_tot,
+		"incremento de contagios (Rt)": Rt,
+		"<a href='https://coronavirusapoyamexico.c3.unam.mx/home'>coronavirusapoyamexico.c3.unam.mx</a>" : covidapp
+	};
+
+	var map = L.map('map', {
+	center: [19.29, -99.12766],
+	zoom: 9,
+	layers: [streets, infectados]
+	});
+		  
+	L.control.layers(baseLayers, overlays).addTo(map);
+	
+	</script>
+
+	
+	</body>
+</html>
