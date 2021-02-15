@@ -2,7 +2,7 @@
 <html>
 <head>
 	
-	<title>Observatorio de vacunas</title>
+	<title>Observatorio de vacunas contra Covid-19</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,28 +11,18 @@
 	<style>
 
 		body {
-			background: "white"
-			background-image: url('');
+			background: transparent;
+			background-image: url("Imagen vacuna con letra.jpg");
+			background-repeat: no-repeat;
 			opacity:1;
+			background-size: 100%;
+			background-color:transparent;
+			margin:auto;
+			width:100%;
+			height:50vh;
+			min-height:100px;
 		}
 
-		.header_1 {
-			padding: 90px;
-			text-align: center;
-			background: #1c3d6c;
-			opacity: 0.7;
-			color: white;
-			font-size: 40px;
-		}
-
-		.header_2 {
-			padding: 90px;
-			text-align: center;
-			background: #1c3d6c;
-			opacity: 0.7;
-			color: white;
-			font-size: 40px;
-		}
 
     	.card {
     		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -80,20 +70,15 @@
 		  transition: max-height 0.2s ease-out;
 		  background-color: transparent;
 		}
-
-		.header_x {
-			padding: 90px;
-			text-align: center;
-			background: transparent;
-			opacity: 1;
-			color: white;
-			font-size: 40px;
-			background-image: url("imagen con logos.jpg");
-			background-repeat: no-repeat;
-			background-size: 1300px;
-			background-color:azure;		
-
-		}		
+	
+		.sticky_regreso {
+      		position: fixed;
+      		top: 27vw;
+      		right:3%;
+      		width: 90%;
+      		margin:auto;
+      		opacity:0.3;
+      	}
 
 	</style>
 
@@ -102,21 +87,9 @@
 <body>
 
 
-		 <div class="header_x" align=center style="height:600px;"><a href="index.html" style="color:black;">Observatorio de vacunas contra Covid-19: Ciudad de México</a>
-
-	 </div>
-
-	 <!--a href="index.html">
-	 	<div class="header_1">Observatorio de vacunas contra Covid-19: Ciudad de México
-		<br><br>
-		<img src="logo_C3.png" width=150px align="left">
-		<img src="logoPUIS-página.png" width=120px align="right">
-	 </div>
-	</a>
-
 
 <!-- lista de vacunas APROBADAS -->
-		<div style="background:lightgreen;">
+		<div style="background:lightgreen; margin-top:35vw;">
 			<br><h2 align="center">Vacunas aprobadas por COFEPRIS</h2>
 			<br><br>
 
@@ -269,6 +242,8 @@ Archivos del Dr. Carlos Federico Arias Ortiz, <br>Investigador del Instituto de 
 
 		</div>
 
+
+	<a href="index.html"><img class="sticky_regreso" src="regresar.png" style="width:5%;"></a>
 
 <!-- lugar para el chat -->
 
