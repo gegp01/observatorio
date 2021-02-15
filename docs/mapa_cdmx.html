@@ -44,28 +44,6 @@
 	
 	<script type="text/javascript">
 	
-	function style_Rt(feature) {
-		return {
-			weight: 2,
-			opacity: 1,
-			color: 'transparent',
-			dashArray: '3',
-			fillOpacity: 0.5,
-			fillColor: feature.properties.Rt_col
-		};
-	}
-	
-
-	function style_decesos_tot(feature) {
-		return {
-			weight: 2,
-			opacity: 1,
-			color: 'transparent',
-			dashArray: '3',
-			fillOpacity: 0.3,
-			fillColor: feature.properties.dead_col
-		};
-	}
 	
 	function style_infectados(feature) {
 		return {
@@ -106,13 +84,7 @@
 
 	var infectados;
 	var infectados = new L.geoJson(XDATA, {style:style_infectados, onEachFeature: onEachFeature});
-	
-	var Rt;
-	var Rt = new L.geoJson(XDATA, {style: style_Rt, onEachFeature: onEachFeature});
-	
-	var decesos_tot;
-	var decesos_tot = new L.geoJson(XDATA, {style:style_decesos_tot, onEachFeature: onEachFeature});
-	
+
 	var covidapp;
 	var covidapp = new L.geoJson(covidapp, {
 		pointToLayer: function(feature, latlng) {
@@ -120,35 +92,26 @@
 		},
 		onEachFeature: function (feature, layer) {
 			    layer.bindPopup(
-				"<b>participaciones: </b>" +
+				"<a href='https://coronavirusapoyamexico.c3.unam.mx/home'>coronavirus|UNAM: </a>" +
 				feature.properties.reportes)
 			    }
 		
 	});
 	
 
-	var baseLayers = {
-		"mapa base": grayscale,
-		"calles": streets
-	};
-
-	var overlays = {
-		"infectados activos": infectados,
-		"decesos totales": decesos_tot,
-		"incremento de contagios (Rt)": Rt,
-		"<a href='https://coronavirusapoyamexico.c3.unam.mx/home'>coronavirusapoyamexico.c3.unam.mx</a>" : covidapp
-	};
-
 	var map = L.map('map', {
 	center: [19.29, -99.12766],
 	zoom: 9,
-	layers: [streets, infectados]
+	layers: [streets, infectados, covidapp]
 	});
 		  
-	L.control.layers(baseLayers, overlays).addTo(map);
+
 	
 	</script>
 
 	
 	</body>
 </html>
+
+
+<!--	L.control.layers(baseLayers, overlays).addTo(map);-->
