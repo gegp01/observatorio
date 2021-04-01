@@ -74,6 +74,16 @@
 </head>
 
 <body>
+	
+	<div> 
+		<?php
+		$myfile = fopen("presenta.txt", "r") or die("Unable to open file!");
+		echo fread($myfile,filesize("presenta.txt"));
+		fclose($myfile);
+		?> 
+	</div>
+	
+	
 		<div class="row" style="margin-top:38vw; background-color:transparent;">
 
 			<div class="card border-primary mb-3 offset-1" style="width:300px;">
