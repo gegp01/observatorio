@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="https://symbiontit.c3.unam.mx/css/spacelab/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="observatorio_style.css">
+	</head>
+
+
+<body>
+
+	<div style="margin-top:38vw; background-color:transparent;">
+
+		<button class="collapsible">Presentación</button>
+				<div class = content style="max-width:800px;">
+				<p id="presenta" align="justify"></p>
+				<p align="right"><img src="SecSALUD.png" style= "width:150px; align-content:right;"></p>
+		</div>
+	<hr>
+
+		<button class="collapsible">Objetivos y logros</button>
+			<div class="row content">
+					<div class="card border-primary mb-3 offset-1">
+						<div class="card_header"><h5>Objetivos</h5></div>
+						<div class="card-body" id="objetivos"></div>
+					</div>
+
+					<div class="card border-primary mb-3 offset-1">
+						<div class="card_header"><h5>Logros</h5></div>
+						<div class="card-body" id="logros"></div>
+					</div>
+			</div>
+	<hr>
+
+		<button class="collapsible">Participantes</button>
+			<div class="row content">
+					<div class="card border-primary mb-3 offset-1" style="width:33vw;">
+						<div class="card_header"><h5>Coordinadores Salud</h5></div>
+						<div class="card-body" id="coordinadoresSALUD"></div>
+					</div>
+
+					<div class="card border-primary mb-3 offset-1" style="width:33vw;">
+						<div class="card_header"><h5>Coordinadores C3</h5></div>
+						<div class="card-body" id="coordinadoresC3"></div>
+					</div>
+
+					<div class="card border-primary mb-3 offset-1" style="width:33vw;">
+						<div class="card_header"><h5>Responsables técnicos</h5></div>
+						<div class="card-body" id="responsablesSALUD"></div>
+					</div>
+
+					<div class="card border-primary mb-3 offset-1" style="width:33vw;">
+						<div class="card_header"><h5>Responsables técnicos</h5></div>
+						<div class="card-body" id="responsablesC3"></div>
+					</div>
+			</div>
+	</div>
+
+
+	<script src="Q.json"></script>
+	<script>
+		var observatorio = JSON.parse(myJSON);
+		document.getElementById("objetivos").innerHTML = observatorio.objetivos;
+		document.getElementById("presenta").innerHTML = observatorio.presenta;
+		document.getElementById("logros").innerHTML = observatorio.logros;
+		document.getElementById("responsablesC3").innerHTML = observatorio.responsablesC3;
+		document.getElementById("responsablesSALUD").innerHTML = observatorio.responsablesSALUD;
+		document.getElementById("coordinadoresC3").innerHTML = observatorio.coordinadoresC3;
+		document.getElementById("coordinadoresSALUD").innerHTML = observatorio.coordinadoresSALUD;
+	</script>
+
+	<script>
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+	    this.classList.toggle("active");
+	    var content = this.nextElementSibling;
+	    if (content.style.maxHeight){
+	      content.style.maxHeight = null;
+	    } else {
+	      content.style.maxHeight = content.scrollHeight + "px";
+	    } 
+	  });
+	}
+	</script>
+
+</body>
+</html>
+
+

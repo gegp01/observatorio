@@ -1,0 +1,70 @@
+		body {
+			background: transparent;
+			background-image: url("Imagen vacuna con letra.jpg");
+			background-repeat: no-repeat;
+			opacity:1;
+			background-size: 100%;
+			background-color:#f8f9f9;
+			margin:auto;
+			width:95%;
+			height:50vh;
+			min-height:100px;
+		}
+
+    	.card {
+    		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    		background:#f4f6f7;
+    		opacity: 0.7;
+    		width:30vw; 
+    		min-width:300px;
+    	}
+
+    	.card:hover {
+    		background:white;
+    		opacity:1;
+    	}
+
+    	 .card_header {
+    		background:darkslateblue;
+    		opacity: 1;
+    		text-align:center;
+    		color:azure;
+    	}
+
+    	.sticky {
+      		position: fixed;
+      		top: 10%;
+      		left:3%;
+      		width: 90%;
+      		margin:auto;
+      	}
+
+		.collapsible {
+		  color: #0B243B;
+		  cursor: pointer;
+		  padding: 0px;
+		  width: 150px;
+		  border: none;
+		  text-align: left;
+		  outline: none;
+		  font-size: 15px;
+		  background-color: transparent;
+		}
+		    
+		.active, .collapsible:hover {
+		  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+		  background-color:transparent;
+		  color: #0B243B;
+		}
+		.content {
+		  padding: 0 0px;
+		  max-height: 0;
+		  overflow: hidden;
+		  transition: max-height 0.2s ease-out;
+		  background-color: transparent;
+		}
+		 
+		 .indented {
+		  padding-left: 30pt;
+		  padding-right: 30pt;
+		}
