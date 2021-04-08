@@ -3,59 +3,134 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="https://symbiontit.c3.unam.mx/css/spacelab/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="observatorio_style.css">
+		<link rel="stylesheet" type="text/css" href="https://symbiontit.c3.unam.mx/css/spacelab/bootstrap.min.css">
+		<!--link rel="stylesheet" type="text/css" href="observatorio_style.css"-->
+
+
+	<style>
+
+		body {
+			background: transparent;
+			background-image: url("Imagen vacuna con letra.jpg");
+			background-repeat: no-repeat;
+			opacity:1;
+			background-size: 100%;
+			background-color:#f8f9f9;
+			margin:auto;
+			width:95%;
+			height:50vh;
+			min-height:100px;
+		}
+
+    	.card {
+    		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    		background:#f4f6f7;
+    		opacity: 0.7;
+    		width:33vw; 
+    		min-width:300px;
+    	}
+
+    	.card:hover {
+    		background:white;
+    		opacity:1;
+    	}
+
+    	 .card_header {
+    		background:darkslateblue;
+    		opacity: 1;
+    		text-align:center;
+    		color:azure;
+    	}
+
+	   .sticky {
+      		position: fixed;
+      		top: 1%;
+      		left:3%;
+      		width: 90%;
+      		margin:auto;
+      	}
+
+      	.bg-primary {
+      		opacity:1;
+      	}
+
+      </style>
+
 	</head>
 
 
 <body>
 
-	<div style="margin-top:38vw; background-color:transparent;">
+	<div id="home" style="margin-top:38vw; background-color:transparent;">
 
-		<button class="collapsible">Presentación</button>
-				<div class = content style="max-width:800px;">
-				<p id="presenta" align="justify"></p>
-				<p align="right"><img src="SecSALUD.png" style= "width:150px; align-content:right;"></p>
+		<div>
+			<p id="presenta" align="justify"></p>
+			<p align="right"><img src="SecSALUD.png" style= "width:150px; align-content:right;"></p>
 		</div>
-	<hr>
 
-		<button class="collapsible">Objetivos y logros</button>
-			<div class="row content">
+<hr>
+
+		<div id="objetivosylogros">
+		<br><br><br></div>
+
+				<div class="row">
+							<div class="card border-primary mb-3 offset-1">
+								<div class="card_header"><h5>Objetivos</h5></div>
+								<div class="card-body" id="objetivos"></div>
+							</div>
+
+							<div class="card border-primary mb-3 offset-1">
+								<div class="card_header"><h5>Logros</h5></div>
+								<div class="card-body" id="logros"></div>
+							</div>
+				</div>
+<hr>
+		<div class="row" id="participantes">
 					<div class="card border-primary mb-3 offset-1">
-						<div class="card_header"><h5>Objetivos</h5></div>
-						<div class="card-body" id="objetivos"></div>
-					</div>
-
-					<div class="card border-primary mb-3 offset-1">
-						<div class="card_header"><h5>Logros</h5></div>
-						<div class="card-body" id="logros"></div>
-					</div>
-			</div>
-	<hr>
-
-		<button class="collapsible">Participantes</button>
-			<div class="row content">
-					<div class="card border-primary mb-3 offset-1" style="width:33vw;">
 						<div class="card_header"><h5>Coordinadores Salud</h5></div>
 						<div class="card-body" id="coordinadoresSALUD"></div>
 					</div>
 
-					<div class="card border-primary mb-3 offset-1" style="width:33vw;">
+					<div class="card border-primary mb-3 offset-1">
 						<div class="card_header"><h5>Coordinadores C3</h5></div>
 						<div class="card-body" id="coordinadoresC3"></div>
 					</div>
 
-					<div class="card border-primary mb-3 offset-1" style="width:33vw;">
+					<div class="card border-primary mb-3 offset-1">
 						<div class="card_header"><h5>Responsables técnicos</h5></div>
 						<div class="card-body" id="responsablesSALUD"></div>
 					</div>
 
-					<div class="card border-primary mb-3 offset-1" style="width:33vw;">
+					<div class="card border-primary mb-3 offset-1">
 						<div class="card_header"><h5>Responsables técnicos</h5></div>
 						<div class="card-body" id="responsablesC3"></div>
 					</div>
-			</div>
+		</div>
 	</div>
+
+
+	<nav class="sticky navbar navbar-expand-lg navbar-dark bg-primary">
+
+	  <div id="navbarColor01">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Presentación
+	        </a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#objetivosylogros">Objetivos y logros</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#participantes">Participantes</a>
+	      </li>
+
+	      <li class="nav-item">
+	        <a class="nav-link" href="#participantes">Pregunta a un profesional en Salud</a>
+	      </li>
+
+	    </ul>
+	  </div>
+	</nav>
 
 
 	<script src="Q.json"></script>
@@ -70,23 +145,29 @@
 		document.getElementById("coordinadoresSALUD").innerHTML = observatorio.coordinadoresSALUD;
 	</script>
 
-	<script>
-	var coll = document.getElementsByClassName("collapsible");
-	var i;
-	for (i = 0; i < coll.length; i++) {
-	  coll[i].addEventListener("click", function() {
-	    this.classList.toggle("active");
-	    var content = this.nextElementSibling;
-	    if (content.style.maxHeight){
-	      content.style.maxHeight = null;
-	    } else {
-	      content.style.maxHeight = content.scrollHeight + "px";
-	    } 
-	  });
-	}
+
+<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	s1.async=true;
+	s1.src='https://embed.tawk.to/606e1a01067c2605c0c03a72/1f2n1b5sh';
+	s1.charset='UTF-8';
+	s1.setAttribute('crossorigin','*');
+	s0.parentNode.insertBefore(s1,s0);
+	})();
 	</script>
+<!--End of Tawk.to Script-->
+
 
 </body>
 </html>
 
 
+<!--observatoriodevacunas@c3.unam.mx QDEBxjqA2S8nco5pf>
+
+tawk
+chat: F8dF8XrTehGinMFa
+
+-->
