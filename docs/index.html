@@ -1,79 +1,58 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+	<title>Observatorio de vacunas contra Covid-19</title>
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="https://symbiontit.c3.unam.mx/css/spacelab/bootstrap.min.css">
-		<!--link rel="stylesheet" type="text/css" href="observatorio_style.css"-->
-
-
-	<style>
-
-		body {
-			background: transparent;
-			background-image: url("Imagen vacuna con letra.jpg");
-			background-repeat: no-repeat;
-			opacity:1;
-			background-size: 100%;
-			background-color:#f8f9f9;
-			margin:auto;
-			width:95%;
-			height:50vh;
-			min-height:100px;
-		}
-
-    	.card {
-    		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    		background:#f4f6f7;
-    		opacity: 0.7;
-    		width:33vw; 
-    		min-width:300px;
-    	}
-
-    	.card:hover {
-    		background:white;
-    		opacity:1;
-    	}
-
-    	 .card_header {
-    		background:darkslateblue;
-    		opacity: 1;
-    		text-align:center;
-    		color:azure;
-    	}
-
-	   .sticky {
-      		position: fixed;
-      		top: 1%;
-      		left:3%;
-      		width: 90%;
-      		margin:auto;
-      	}
-
-      	.bg-primary {
-      		background-color: red;
-      		color:red;
-      		opacity:1;
-      	}
-
-      </style>
-
+		<link rel="stylesheet" type="text/css" href="observatorio_style.css">
 	</head>
 
-
 <body>
+<!--https://www.jasondavies.com/wordcloud/ -->
+		<header>
+			<nav class="sticky navbar navbar-expand-lg bg-transparent">
+			  <div id="navbarColor01">
+			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Presentación</a></li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#objetivosylogros">Objetivos y logros</a></li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#participantes">Participantes</a></li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#participantes">Aviso de privacidad</a></li>
+			    </ul>
+			  </div>
+			</nav>
+		</header>
 
-	<div id="home" style="margin-top:38vw; background-color:transparent;">
+<br>
+<br>
 
-		<div>
+		<div style = "margin-left:3%; margin-right:3%;">
 			<p id="presenta" align="justify"></p>
 			<p align="right"><img src="SecSALUD.png" style= "width:150px; align-content:right;"></p>
 		</div>
 
 <hr>
+<div>
+		<div class="slideshow-container">
+			<div class="mySlides1"><img class="slideX" src="wordcloud.svg"></div>
+			<div class="mySlides1"><object class="slideX" data="https://www.youtube.com/embed/airlAr6pMx4"></object></div>
+			<div class="mySlides1"><object class="slideX" data = "https://www.youtube.com/embed/ZVuAGa8nSJc"></object></div>
+			<div class="mySlides1"><object class="slideX" data = "https://www.youtube.com/embed/McoJ4eVByKY"></object></div>
 
-		<div id="objetivosylogros">
-		<br><br><br></div>
+		  <a class="prev" onclick="plusSlides(-1, 0)">&#12296;</a>
+		  <a class="next" onclick="plusSlides(1, 0)">&#12297;</a>
+
+		</div>
+</div>
+
+<hr>
+
+
+		<div id="objetivosylogros"><br><br><br></div>
 
 				<div class="row">
 							<div class="card border-primary mb-3 offset-1">
@@ -86,8 +65,11 @@
 								<div class="card-body" id="logros"></div>
 							</div>
 				</div>
+
 <hr>
+
 		<div class="row" id="participantes">
+
 					<div class="card border-primary mb-3 offset-1">
 						<div class="card_header"><h5>Coordinadores Salud</h5></div>
 						<div class="card-body" id="coordinadoresSALUD"></div>
@@ -108,26 +90,6 @@
 						<div class="card-body" id="responsablesC3"></div>
 					</div>
 		</div>
-	</div>
-
-
-	<nav class="sticky navbar navbar-expand-lg navbar-inverted bg-transparent">
-
-	  <div id="navbarColor01">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Presentación
-	        </a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#objetivosylogros">Objetivos y logros</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#participantes">Participantes</a>
-	      </li>
-	    </ul>
-	  </div>
-	</nav>
 
 
 	<script src="Q.json"></script>
@@ -156,6 +118,28 @@
 	})();
 	</script>
 <!--End of Tawk.to Script-->
+
+	<script>
+	var slideIndex = [1,1];
+	var slideId = ["mySlides1"]
+	showSlides(1, 0);
+	showSlides(1, 1);
+
+	function plusSlides(n, no) {
+	  showSlides(slideIndex[no] += n, no);
+	}
+
+	function showSlides(n, no) {
+	  var i;
+	  var x = document.getElementsByClassName(slideId[no]);
+	  if (n > x.length) {slideIndex[no] = 1}    
+	  if (n < 1) {slideIndex[no] = x.length}
+	  for (i = 0; i < x.length; i++) {
+	     x[i].style.display = "none";  
+	  }
+	  x[slideIndex[no]-1].style.display = "block";  
+	}
+	</script>
 
 
 </body>
