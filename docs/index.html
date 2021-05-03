@@ -6,37 +6,123 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="https://symbiontit.c3.unam.mx/css/spacelab/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="observatorio_style.css">
+
 	</head>
 
 <body>
 <!--https://www.jasondavies.com/wordcloud/ -->
 		<header>
-			<nav class="sticky navbar navbar-expand-lg bg-transparent">
-			  <div id="navbarColor01">
-			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item">
-			        <a class="nav-link" href="#">Presentación</a></li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="#objetivosylogros">Objetivos y logros</a></li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="#participantes">Participantes</a></li>
-			      <li class="nav-item">
-			        <a class="nav-link" href="#avisodeprivacidad">Aviso de privacidad</a></li>
-			    </ul>
-			  </div>
-			</nav>
+			<p id="barra"></p>
 		</header>
 
-<br><br>
+<br>
 
-		<div style = "margin-left:3%; margin-right:3%;">
-			<p id="presenta" align="justify"></p>
-			<p align="right"><img src="SecSALUD.png" style= "width:150px; align-content:right;"></p>
+		<div align=center>
+			<p id="intro" align="center" style="max-width:800px;"></p>
 		</div>
 
+	
+		<div style="background-color:rgba(12, 96, 100, 1); color:white;" align=center>
+			<br>
+			<p id="mision" align="left" style="max-width:800px; font-size:25px; font-style: italic;"></p>
+			<br>
+		</div>
+
+		<div style="background-color:transparent; color:rgba(12, 96, 100, 1);" align=center>
+			<br>
+			<p id="vision" align=left style="max-width:800px; font-size:21px; font-style: italic;"></p>
+		</div>
+			<!--p align="right"><img src="SecSALUD.png" style= "width:150px; align-content:right;"></p-->
+		<!--/div-->
+
 <hr>
-<div>
-		<div class="slideshow-container">
+
+		<div id ="editorial" align="justify" style="margin-left:3%;"><h4>Editoriales</h4><hr style="width:150px;" align="left"></div>
+
+		<div class="row">
+
+					<div class="card border-primary mb-3 offset-1">
+						<div class="card_header"><h5>Editorial 1</h5></div>
+						<div class="card-body" id="presentaX">La comunicación es una acción central en la gestión de la pandemia. Una de las lecciones por aprender en la pandemia de COVID-19, es que la construcción del conocimiento científico, resulta tan importante como su adecuada difusión entre el público general y el personal de salud...</div>
+					</div>
+
+					<div class="card border-primary mb-3 offset-1">
+						<div class="card_header"><h5>Editorial 2</h5></div>
+						<div class="card-body" id="objetivosX"></div>
+					</div>
+
+					<div class="card border-primary mb-3 offset-1">
+						<div class="card_header"><h5>Editorial 3</h5></div>
+						<div class="card-body" id="logrosX"></div>
+					</div>
+		</div>
+
+
+<hr>
+	<div align="center">
+		<div id ="testimonios" align="justify" style="margin-left:3%;">
+			<h4>Testimonios</h4>
+			<hr style="width:150px;" align="left">
+		</div>
+	</div>
+
+	<div align="center">
+		<div id ="informes" align="justify" style="margin-left:3%;">
+			<h4>Informes</h4>
+			<hr style="width:150px;" align="left">
+		</div>
+	</div>
+
+<hr>
+<br>
+	<div align="center">
+		<div id ="testimonios" align="justify" style="margin-left:3%;">
+			<h4>Observatorio</h4>
+			<hr style="width:150px;" align="left">
+		</div>
+	</div>
+
+
+	<div align="center">
+		<div style = "max-width:800px;">
+			<div class="row">
+					<div id="coordinadoresC3" style="max-width:40%; margin-right:5%;"></div>
+					<div id="coordinadoresSALUD" style="max-width:40%; margin-left:5%;"></div>
+			</div>
+
+<br>
+
+			<div class="row" align="center">
+					<div id="responsablesC3" style="max-width:40%; text-align:justify; margin-right:5%;"></div>
+					<div id=responsablesSALUD style="max-width:40%; text-align:justify; margin-left:5%;"></div>
+			</div>
+
+		</div>
+	</div>
+
+<hr>
+	<div align="center">
+		<div style = "margin-left:3%; margin-right:3%; max-width:800px;">
+			<br><h5 align=left>Editorial 1</h5><p style="font-size:13px; text-align:left;">Mauricio</p>
+			<p id="presenta" align="justify"></p>
+		</div>
+	</div>
+
+<hr>
+	<div align="center">
+		<div style = "margin-left:3%; margin-right:3%; max-width:800px;">
+			<br>
+			<p id="avisodeprivacidad" align="justify"></p>
+		</div>
+	</div>
+
+
+<!-- CAROUSEL -->
+		<!--div>
+			<div id = "carousel_1"></div>
+		</div-->
+
+		<!--div class="slideshow-container">
 			<div class="mySlides1"><img class="slideX" src="wordcloud.svg"></div>
 			<div class="mySlides1"><object class="slideX" data="https://www.youtube.com/embed/airlAr6pMx4"></object></div>
 			<div class="mySlides1"><object class="slideX" data = "https://www.youtube.com/embed/ZVuAGa8nSJc"></object></div>
@@ -44,69 +130,39 @@
 
 		  <a class="prev" onclick="plusSlides(-1, 0)">&#12296;</a>
 		  <a class="next" onclick="plusSlides(1, 0)">&#12297;</a>
+		</div-->
 
-		</div>
-</div>
+<!--div id ="informes" align="justify" style="margin-left:3%;">
+<h4>Informes</h4>
+<hr style="width:150px;" align="left"></div-->
 
-<hr>
 
-
-		<div id="objetivosylogros"><br><br><br></div>
-
-				<div class="row">
-							<div class="card border-primary mb-3 offset-1">
-								<div class="card_header"><h5>Objetivos</h5></div>
-								<div class="card-body" id="objetivos"></div>
-							</div>
-
-							<div class="card border-primary mb-3 offset-1">
-								<div class="card_header"><h5>Logros</h5></div>
-								<div class="card-body" id="logros"></div>
-							</div>
-				</div>
-
-<hr>
-
-		<div class="row" id="participantes">
-
-					<div class="card border-primary mb-3 offset-1">
-						<div class="card_header"><h5>Coordinadores Salud</h5></div>
-						<div class="card-body" id="coordinadoresSALUD"></div>
-					</div>
-
-					<div class="card border-primary mb-3 offset-1">
-						<div class="card_header"><h5>Coordinadores C3</h5></div>
-						<div class="card-body" id="coordinadoresC3"></div>
-					</div>
-
-					<div class="card border-primary mb-3 offset-1">
-						<div class="card_header"><h5>Responsables técnicos</h5></div>
-						<div class="card-body" id="responsablesSALUD"></div>
-					</div>
-
-					<div class="card border-primary mb-3 offset-1">
-						<div class="card_header"><h5>Responsables técnicos</h5></div>
-						<div class="card-body" id="responsablesC3"></div>
-					</div>
-		</div>
-<hr>
-		<div style = "margin-left:3%; margin-right:3%;">
+		<!--div style = "margin-left:3%; margin-right:3%;">
 			<br>
 			<p id="avisodeprivacidad" align="justify"></p>
-		</div>
+		</div-->
+
+
 
 	<script src="Q.json"></script>
 	<script>
 		var observatorio = JSON.parse(myJSON);
-		document.getElementById("objetivos").innerHTML = observatorio.objetivos;
+		document.getElementById("barra").innerHTML = observatorio.barra;
+		document.getElementById("intro").innerHTML = observatorio.texto_intro;
+		document.getElementById("mision").innerHTML = observatorio.mision;
+		document.getElementById("vision").innerHTML = observatorio.vision;
+		document.getElementById("avisodeprivacidad").innerHTML = observatorio.avisodeprivacidad;
 		document.getElementById("presenta").innerHTML = observatorio.presenta;
-		document.getElementById("logros").innerHTML = observatorio.logros;
-		document.getElementById("responsablesC3").innerHTML = observatorio.responsablesC3;
-		document.getElementById("responsablesSALUD").innerHTML = observatorio.responsablesSALUD;
 		document.getElementById("coordinadoresC3").innerHTML = observatorio.coordinadoresC3;
 		document.getElementById("coordinadoresSALUD").innerHTML = observatorio.coordinadoresSALUD;
-		document.getElementById("avisodeprivacidad").innerHTML = observatorio.avisodeprivacidad;
+		document.getElementById("responsablesC3").innerHTML = observatorio.responsablesC3;
+		document.getElementById("responsablesSALUD").innerHTML = observatorio.responsablesSALUD;
+		document.getElementById("objetivos").innerHTML = observatorio.objetivos;
+		document.getElementById("logros").innerHTML = observatorio.logros;
+
+
 	</script>
+
 
 
 <!--Start of Tawk.to Script-->
@@ -121,6 +177,8 @@
 	s0.parentNode.insertBefore(s1,s0);
 	})();
 	</script>
+
+
 <!--End of Tawk.to Script-->
 
 	<script>
