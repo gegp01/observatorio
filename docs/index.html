@@ -47,6 +47,61 @@
 			<!--p align="right"><img src="SecSALUD.png" style= "width:150px; align-content:right;"></p-->
 		<!--/div-->
 
+<hr id ="introduccion">
+<br><br>
+		<div align="center">
+			<div style = "margin-left:3%; margin-right:3%; max-width:1200px;">
+				<br><h3 align=left>Observatorio</h3><hr style="width:150px; margin-left:0%">
+			</div>
+		</div>
+		<div style="background-color:transparent; color:black;" align=center>
+			<br>
+			<p id="intro_long" align=left style="max-width:1200px; font-size:22px; text-align:justify;"></p>
+		</div>
+
+
+<hr id ="participantes">
+<br><br>
+
+		<div align="center">
+			<div style = "margin-left:3%; margin-right:3%; max-width:1200px;">
+				<br><h3 align=left>Observatorio</h3><hr style="width:150px; margin-left:0%">
+			</div>
+		</div>
+
+	<div align="center">
+		<div style = "max-width:1200px; margin-left:5%;">
+			<div class="row">
+					<div id="coordinadoresC3" style="max-width:42%; margin-right:3%;"></div>
+					<div id="coordinadoresSALUD" style="max-width:42%; margin-left:3%;"></div>
+			</div>
+
+<br>
+
+			<div class="row" align="center">
+					<div id="responsablesC3" style="max-width:42%; text-align:justify; margin-right:3%;"></div>
+					<div id=responsablesSALUD style="max-width:42%; text-align:justify; margin-left:3%;"></div>
+			</div>
+
+		</div>
+	</div>
+
+
+<hr id ="informe">
+<br><br>
+		<div align="center">
+			<div style = "margin-left:3%; margin-right:3%; max-width:1200px;">
+				<br><h3 align=left>Informes</h3><hr style="width:150px; margin-left:0%">
+			</div>
+		</div>
+		<div class="row">
+					<div class="card border-primary mb-3 offset-1">
+						<div class="card_header"><h5>Reporte semanal sobre la Covid-19</h5>Dr. Samuel Ponce de León Rosales <br>Dr. Abraham García Miranda</div>
+						<div class="card-body" id="" align="justify">
+						<p style="margin-left:3%; margin-right:3%; text-align:center;"><br><b style="font-size:27px;">Semana 17</b><br><a href = "informe_semana_17.pdf" target=_blank>Leer mas</a></p></div>
+					</div>
+</div>
+
 <hr id ="editorial">
 <br><br>
 
@@ -86,46 +141,6 @@
 		</div-->
 
 
-<hr id ="informe">
-<br><br>
-		<div align="center">
-			<div style = "margin-left:3%; margin-right:3%; max-width:1200px;">
-				<br><h3 align=left>Informes</h3><hr style="width:150px; margin-left:0%">
-			</div>
-		</div>
-		<div class="row">
-					<div class="card border-primary mb-3 offset-1">
-						<div class="card_header"><h5>Reporte semanal sobre la Covid-19</h5>Dr. Samuel Ponce de León Rosales <br>Dr. Abraham García Miranda</div>
-						<div class="card-body" id="" align="justify">
-						<p style="margin-left:3%; margin-right:3%; text-align:center;"><br><b style="font-size:27px;">Semana 17</b><br><a href = "informe_semana_17.pdf" target=_blank>Leer mas</a></p></div>
-					</div>
-</div>
-
-<hr id ="participantes">
-<br><br>
-
-		<div align="center">
-			<div style = "margin-left:3%; margin-right:3%; max-width:1200px;">
-				<br><h3 align=left>Observatorio</h3><hr style="width:150px; margin-left:0%">
-			</div>
-		</div>
-
-	<div align="center">
-		<div style = "max-width:1200px; margin-left:5%;">
-			<div class="row">
-					<div id="coordinadoresC3" style="max-width:42%; margin-right:3%;"></div>
-					<div id="coordinadoresSALUD" style="max-width:42%; margin-left:3%;"></div>
-			</div>
-
-<br>
-
-			<div class="row" align="center">
-					<div id="responsablesC3" style="max-width:42%; text-align:justify; margin-right:3%;"></div>
-					<div id=responsablesSALUD style="max-width:42%; text-align:justify; margin-left:3%;"></div>
-			</div>
-
-		</div>
-	</div>
 
 
 <hr id = "editorial_1">
@@ -188,14 +203,16 @@
 		document.getElementById("intro").innerHTML = observatorio.texto_intro;
 		document.getElementById("mision").innerHTML = observatorio.mision;
 		document.getElementById("vision").innerHTML = observatorio.vision;
-		document.getElementById("avisodeprivacidad").innerHTML = observatorio.avisodeprivacidad;
-		document.getElementById("presenta").innerHTML = observatorio.presenta;
+		document.getElementById("intro_long").innerHTML = observatorio.intro_long;
 		document.getElementById("coordinadoresC3").innerHTML = observatorio.coordinadoresC3;
 		document.getElementById("coordinadoresSALUD").innerHTML = observatorio.coordinadoresSALUD;
 		document.getElementById("responsablesC3").innerHTML = observatorio.responsablesC3;
 		document.getElementById("responsablesSALUD").innerHTML = observatorio.responsablesSALUD;
+		document.getElementById("presenta").innerHTML = observatorio.presenta;
+		document.getElementById("avisodeprivacidad").innerHTML = observatorio.avisodeprivacidad;
 		document.getElementById("objetivos").innerHTML = observatorio.objetivos;
 		document.getElementById("logros").innerHTML = observatorio.logros;
+
 	</script>
 
 <!--Start of Tawk.to Script-->
