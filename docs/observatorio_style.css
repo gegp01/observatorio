@@ -19,6 +19,77 @@
 			min-height:100px;
 		}
 
+
+		.header_informes {
+			/*background: darkslategrey;*/
+			/*background-image: url("Imagen vacuna con letra.jpg");*/
+			background-image:url("portada_informes.jpg");
+			background-repeat: no-repeat;
+			opacity:1;
+			background-size: 100%;
+			background-color:transparent;
+			margin:auto;
+			width:100%;
+			height:36vw;
+			min-height:100px;
+		}
+
+		.header_about {
+			/*background: darkslategrey;*/
+			/*background-image: url("Imagen vacuna con letra.jpg");*/
+			background-image:url("portada_about.jpg");
+			background-repeat: no-repeat;
+			opacity:1;
+			background-size: 100%;
+			background-color:transparent;
+			margin:auto;
+			width:100%;
+			height:36vw;
+			min-height:100px;
+		}
+
+		.header_editorial {
+			/*background: darkslategrey;*/
+			/*background-image: url("Imagen vacuna con letra.jpg");*/
+			background-image:url("portada_editorial.jpg");
+			background-repeat: no-repeat;
+			opacity:1;
+			background-size: 100%;
+			background-color:transparent;
+			margin:auto;
+			width:100%;
+			height:36vw;
+			min-height:100px;
+		}
+
+		.header_preguntas {
+			/*background: darkslategrey;*/
+			/*background-image: url("Imagen vacuna con letra.jpg");*/
+			background-image:url("portada_preguntas.jpg");
+			background-repeat: no-repeat;
+			opacity:1;
+			background-size: 100%;
+			background-color:transparent;
+			margin:auto;
+			width:100%;
+			height:36vw;
+			min-height:100px;
+		}
+
+		.header_testimonios {
+			/*background: darkslategrey;*/
+			/*background-image: url("Imagen vacuna con letra.jpg");*/
+			background-image:url("portada_testimonios.jpg");
+			background-repeat: no-repeat;
+			opacity:1;
+			background-size: 100%;
+			background-color:transparent;
+			margin:auto;
+			width:100%;
+			height:36vw;
+			min-height:100px;
+		}
+
 		footer {
 			/*background: darkslategrey;*/
 			/*background-image: url("Imagen vacuna con letra.jpg");*/
