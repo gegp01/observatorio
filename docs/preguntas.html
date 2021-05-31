@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Observatorio de vacunas contra Covid-19</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="https://symbiontit.c3.unam.mx/css/spacelab/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="observatorio_style.css">
+
+	</head>
+
+<body>
+		<footer class = "sticky_footer">Actualizado el 20 de mayo de 2021<br><a href="#avisodeprivacidad_tag" style="color:white;">Aviso de privacidad</a></footer>
+
+	<header class="header_preguntas"></header>
+<br>
+		<div align="center">
+			<div style = "margin-left:3%; margin-right:3%; max-width:1200px;"><h5 align=left>Indice</h5>
+			</div>
+		</div>
+
+<!-- ESQUEMA DE VACUNACIÓN -->
+		<div align="center">
+				<div style = "max-width:1200px;" align="left">
+				<button class="collapsible_p"><h3 align=left>Esquema de vacunación</h3><hr style="width:150px; margin-left:0%"></button>
+					<div class="content_p indented" align="center" style="font-size:15px;">
+						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
+							<br>
+							<p id="esquema" style="text-align: left;"></p>
+						</div>
+					</div>
+			</div>
+
+<!-- ESTRATEGIA DE VACUNACIÓN -->
+			<div style = "max-width:1200px;" align="left">
+				<button class="collapsible_p"><h3 align=left>Estrategia de vacunación</h3><hr style="width:150px; margin-left:0%"></button>
+					<div class="content_p indented" align="center" style="font-size:15px;">
+						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
+							<br>
+							<p id="estrategia" style="text-align: left;"></p>
+						</div>
+					</div>
+			</div>
+
+
+<!-- EFECTOS ADVERSOS -->
+
+			<div style = "max-width:1200px;" align="left">
+				<button class="collapsible_p"><h3 align=left>Efectos adversos</h3><hr style="width:150px; margin-left:0%"></button>
+					<div class="content_p indented" align="center" style="font-size:15px;">
+						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
+							<br>
+							<p id="adversos" style="text-align: left;"></p>
+						</div>
+					</div>
+			</div>
+
+
+
+<!-- INFORMACION SOBRE LA VACUNA -->
+
+			<div style = "max-width:1200px;" align="left">
+				<button class="collapsible_p"><h3 align=left>Vacuna contra la Covid-19</h3><hr style="width:150px; margin-left:0%"></button>
+					<div class="content_p indented" align="center" style="font-size:15px;">
+						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
+							<br>
+							<p id="vacuna" style="text-align: left;"></p>
+						</div>
+					</div>
+			</div>
+
+<!-- TIPOS DE VACUNA -->
+
+			<div style = "max-width:1200px;" align="left">
+				<button class="collapsible_p"><h3 align=left>Tipo de vacunas</h3><hr style="width:150px; margin-left:0%"></button>
+					<div class="content_p indented" align="center" style="font-size:15px;">
+						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
+							<br>
+							<p id="tipos" style="text-align: left;"></p>
+						</div>
+					</div>
+			</div>
+
+<!-- EFECTIVIDAD -->
+
+
+			<div style = "max-width:1200px;" align="left">
+				<button class="collapsible_p"><h3 align=left>Efectividad</h3><hr style="width:150px; margin-left:0%"></button>
+					<div class="content_p indented" align="center" style="font-size:15px;">
+						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
+							<br>
+							<p id="efectividad" style="text-align: left;"></p>
+						</div>
+					</div>
+			</div>
+
+		</div>
+
+
+<!--hr id= "avisodeprivacidad_tag">
+<br><br>
+	<div align="center" style="font-size:15px;">
+		<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:75vw;">
+			<br>
+			<p id="avisodeprivacidad" align="justify"></p>
+		</div>
+	</div>
+
+	<script src="Q.js"></script>
+	<script>
+		var observatorio = JSON.parse(myJSON);
+		document.getElementById("avisodeprivacidad").innerHTML = observatorio.avisodeprivacidad;
+
+	</script-->
+
+	<script src="P1.js"></script>
+	<script>
+	    var x1 = JSON.parse(preguntas_esquema);
+	    document.getElementById("esquema").innerHTML = x1.preguntas;
+	</script>
+
+	<script src="P2.js"></script>
+	<script>
+	    var x2 = JSON.parse(preguntas_adversos);
+	    document.getElementById("adversos").innerHTML = x2.preguntas;
+	</script>
+
+	<script src="P3.js"></script>
+	<script>
+	    var x3 = JSON.parse(preguntas_vacuna);
+	    document.getElementById("vacuna").innerHTML = x3.preguntas;
+	</script>
+
+	<script src="P4.js"></script>
+	<script>
+	    var x4 = JSON.parse(preguntas_estrategia);
+	    document.getElementById("estrategia").innerHTML = x4.preguntas;
+	</script>
+
+	<script src="P5.js"></script>
+	<script>
+	    var x5 = JSON.parse(preguntas_tipos);
+	    document.getElementById("tipos").innerHTML = x5.preguntas;
+	</script>
+
+	<script src="P6.js"></script>
+	<script>
+	    var x6 = JSON.parse(preguntas_efectividad);
+	    document.getElementById("efectividad").innerHTML = x6.preguntas;
+	</script>
+
+
+	<script>
+	    var coll = document.getElementsByClassName("collapsible_p");
+	    var i;
+	    for (i = 0; i < coll.length; i++) {
+	      coll[i].addEventListener("click", function() {
+	        this.classList.toggle("active_p");
+	        var content = this.nextElementSibling;
+	        if (content.style.maxHeight){
+	          content.style.maxHeight = null;
+	        } else {
+	          content.style.maxHeight = content.scrollHeight + "px";
+	        } 
+	      });
+	    }
+	</script>
+
+</body>
+</html>
+
