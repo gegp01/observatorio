@@ -5,35 +5,91 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="https://symbiontit.c3.unam.mx/css/spacelab/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="observatorio_style.css">
+		<link rel="stylesheet" type="text/css" href="observatorio_preguntas.css">
+
+<style>
+	.sticky_menu {
+		position:fixed;
+      	top:25%;
+      	/*top: 0%;*/
+      	left:75%;
+      	font-size:14px;
+      	/*width: 100%;*/
+      	/*margin:auto;*/
+      	/*margin-left:3%; margin-right:3%;*/ 
+      	/*max-width:1200px;"*/
+      }
+
+     .sticky_faqs {
+		position:fixed;
+      	top:50%;
+      	/*top: 0%;*/
+      	left:55%;
+      	/*width: 100%;*/
+      	/*margin:auto;*/
+      	/*margin-left:3%; margin-right:3%;*/ 
+      	/*max-width:1200px;"*/
+      }
+
+
+	a{
+		color:#b28325;
+	}
+	a:hover,.rs-blog .blog-item .full-blog-content .blog-title a:hover {
+		color:#01245E;
+	}
+
+</style>
 
 	</head>
 
+
+
 <body>
+
+
 		<footer class = "sticky_footer">Actualizado el 20 de mayo de 2021<br><a href="#avisodeprivacidad_tag" style="color:white;">Aviso de privacidad</a></footer>
 
+		<!--div class="sticky_menu">
+			<ul>
+				<li><a href="#vacuna">La vacuna</a></li>
+				<li><a href="#tipos">Tipos de vacunas</a></li>
+				<li><a href="#efectividad">Efectividad</a></li>
+				<li><a href="#adversos">Efectos adversos</a></li>
+				<li><a href="#esquema">Esquema de vacunación</a></li>
+			</ul>
+
+		</div-->
+
+		<!--div class="sticky_faqs">
+			<ul><h4>Preguntas frecuentes</h4>
+				<li>¿Por que es importante tener completo el esquema de vacunación contra SARS-CoV-2?</li>
+				<li>¿Cuales son los anticuerpos protectores que se generan después de la vacunación contra SARS-CoV-2?</li>
+				<li>¿A partir de que día son detectable los anticuerpos de un individuo vacunado?</li>
+				<li>Cualquier vacuna me protege contra las variantes del SARS-CoV-2?</li>
+			</ul-->
+
+		</div>
+
+
+	<div align="center">	
+
 	<header class="header_preguntas"></header>
+<br>
+
+<div style="background-color:lightgrey; margin-left:3%; margin-right:3%; max-width:1200px;">
+
 <br>
 		<div align="center">
 			<div style = "margin-left:3%; margin-right:3%; max-width:1200px;"><h5 align=left>Indice</h5>
 			</div>
 		</div>
 
-<!-- ESQUEMA DE VACUNACIÓN -->
-		<div align="center">
-				<div style = "max-width:1200px;" align="left">
-				<button class="collapsible_p"><h3 align=left>Esquema de vacunación</h3><hr style="width:150px; margin-left:0%"></button>
-					<div class="content_p indented" align="center" style="font-size:15px;">
-						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
-							<br>
-							<p id="esquema" style="text-align: left;"></p>
-						</div>
-					</div>
-			</div>
 
+		<!--div align="center">		</div-->
 <!-- ESTRATEGIA DE VACUNACIÓN -->
 			<div style = "max-width:1200px;" align="left">
-				<button class="collapsible_p"><h3 align=left>Estrategia de vacunación</h3><hr style="width:150px; margin-left:0%"></button>
+				<button class="collapsible_p"><h4 align=left>Esquema de vacunación</h4><hr style="width:150px; margin-left:0%"></button>
 					<div class="content_p indented" align="center" style="font-size:15px;">
 						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
 							<br>
@@ -43,14 +99,16 @@
 			</div>
 
 
-<!-- EFECTOS ADVERSOS -->
 
-			<div style = "max-width:1200px;" align="left">
-				<button class="collapsible_p"><h3 align=left>Efectos adversos</h3><hr style="width:150px; margin-left:0%"></button>
+
+<!-- ESTRATEGIA DE VACUNACIÓN -->
+
+				<div style = "max-width:1200px;" align="left">
+				<button class="collapsible_p"><h4 align=left>Estrategia de vacunación</h4><hr style="width:150px; margin-left:0%"></button>
 					<div class="content_p indented" align="center" style="font-size:15px;">
 						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
 							<br>
-							<p id="adversos" style="text-align: left;"></p>
+							<p id="esquema" style="text-align: left;"></p>
 						</div>
 					</div>
 			</div>
@@ -60,9 +118,9 @@
 <!-- INFORMACION SOBRE LA VACUNA -->
 
 			<div style = "max-width:1200px;" align="left">
-				<button class="collapsible_p"><h3 align=left>Vacuna contra la Covid-19</h3><hr style="width:150px; margin-left:0%"></button>
+				<button class="collapsible_p"><h4 align=left>Vacuna contra la Covid-19</h4><hr style="width:150px; margin-left:0%"></button>
 					<div class="content_p indented" align="center" style="font-size:15px;">
-						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
+						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:1200px;">
 							<br>
 							<p id="vacuna" style="text-align: left;"></p>
 						</div>
@@ -72,7 +130,7 @@
 <!-- TIPOS DE VACUNA -->
 
 			<div style = "max-width:1200px;" align="left">
-				<button class="collapsible_p"><h3 align=left>Tipo de vacunas</h3><hr style="width:150px; margin-left:0%"></button>
+				<button class="collapsible_p"><h4 align=left>Tipos de vacunas</h4><hr style="width:150px; margin-left:0%"></button>
 					<div class="content_p indented" align="center" style="font-size:15px;">
 						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
 							<br>
@@ -85,7 +143,7 @@
 
 
 			<div style = "max-width:1200px;" align="left">
-				<button class="collapsible_p"><h3 align=left>Efectividad</h3><hr style="width:150px; margin-left:0%"></button>
+				<button class="collapsible_p"><h4 align=left>Efectividad</h4><hr style="width:150px; margin-left:0%"></button>
 					<div class="content_p indented" align="center" style="font-size:15px;">
 						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:500px;">
 							<br>
@@ -94,10 +152,21 @@
 					</div>
 			</div>
 
-		</div>
 
+<!-- EFECTOS ADVERSOS -->
 
-<!--hr id= "avisodeprivacidad_tag">
+			<div style = "max-width:1200px;" align="left">
+				<button class="collapsible_p"><h4 align=left>Efectos adversos</h4><hr style="width:150px; margin-left:0%"></button>
+					<div class="content_p indented" align="center" style="font-size:15px;">
+						<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:4000px;">
+							<br>
+							<p id="adversos" style="text-align: left;"></p>
+						</div>
+					</div>
+			</div>
+</div>
+
+<hr id= "avisodeprivacidad_tag">
 <br><br>
 	<div align="center" style="font-size:15px;">
 		<div style = "margin-left:3%; margin-right:3%; max-width:1200px; height:75vw;">
@@ -111,7 +180,7 @@
 		var observatorio = JSON.parse(myJSON);
 		document.getElementById("avisodeprivacidad").innerHTML = observatorio.avisodeprivacidad;
 
-	</script-->
+	</script>
 
 	<script src="P1.js"></script>
 	<script>
@@ -155,7 +224,7 @@
 	    var i;
 	    for (i = 0; i < coll.length; i++) {
 	      coll[i].addEventListener("click", function() {
-	        this.classList.toggle("active_p");
+	        this.classList.toggle("active");
 	        var content = this.nextElementSibling;
 	        if (content.style.maxHeight){
 	          content.style.maxHeight = null;
