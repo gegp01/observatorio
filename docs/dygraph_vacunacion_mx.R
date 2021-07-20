@@ -9,7 +9,11 @@ library(lubridate)
 # Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021)
 # https://ourworldindata.org/covid-vaccinations?country=MEX
 
-vacunas = read.csv("https://covid.ourworldindata.org/data/owid-covid-data.csv") # COSECHA DATOS DE OUR WORLD IN DATA
+url = "https://covid.ourworldindata.org/data/owid-covid-data.csv"
+download.file(url, destfile = "owid-covid-data.csv", method="wget")
+vacunas = read.csv("owid-covid-data.csv") # COSECHA DATOS DE OUR WORLD IN DATA
+
+# Seleccionar datos de México
 vacunas_mx = vacunas[vacunas$iso_code=="MEX",]
 
 # 2. Generate a time series graph in D3! for the country
