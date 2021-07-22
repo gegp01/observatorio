@@ -9,11 +9,12 @@ library(lubridate)
 # Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021)
 # https://ourworldindata.org/covid-vaccinations?country=MEX
 
+# COSECHA DATOS DE OUR WORLD IN DATA
 url = "https://covid.ourworldindata.org/data/owid-covid-data.csv"
 download.file(url, destfile = "owid-covid-data.csv", method="wget")
 vacunas = read.csv("owid-covid-data.csv") # COSECHA DATOS DE OUR WORLD IN DATA
 
-# Seleccionar datos de México
+# Datos de México
 vacunas_mx = vacunas[vacunas$iso_code=="MEX",]
 
 # 2. Generate a time series graph in D3! for the country
@@ -47,7 +48,8 @@ X.vac = data.frame(personas_1dosis =  vacunas_mx$people_vaccinated / vacunas_mx$
 X.vac.10M = data.frame(personas_1dosis =  (vacunas_mx$people_vaccinated / vacunas_mx$population)*10000
                        , personas_2dosis = (vacunas_mx$people_fully_vaccinated /vacunas_mx$population)*10000
                        , decesos_7d = (d.7[date])*10000
-                       , decesos_14d = (d.14[date])*10000)
+                       , decesos_14d = (d.14[date])*10000
+                       )
 
 q.10M = xts(x = X.vac.10M, order.by = as.Date(vacunas_mx$date))
 
@@ -67,10 +69,10 @@ p.10M <- dygraph(q.10M, ylab="", main="Efecto de la vacunación en México"
                        </li>
                        </i><ul></div>"
                  , width="auto" , height="75vh"
-                 )%>% dyOptions(labelsUTC = T, fillGraph=T, fillAlpha=0.3, drawGrid = T, colors=c("royalblue", "green", "red", "firebrick")) %>% 
-          dyRangeSelector() %>%
-          dyHighlight(highlightCircleSize = 5, highlightSeriesBackgroundAlpha = 0.3, hideOnMouseOut = FALSE) %>%
-          dyRoller(rollPeriod = 7) %>% dyLegend(labelsSeparateLines = 1) %>% dyCSS(css="style_dygraph.css") 
+)%>% dyOptions(labelsUTC = T, fillGraph=T, fillAlpha=0.3, drawGrid = T, colors=c("royalblue", "green", "red", "firebrick")) %>% 
+  dyRangeSelector() %>%
+  dyHighlight(highlightCircleSize = 5, highlightSeriesBackgroundAlpha = 0.3, hideOnMouseOut = FALSE) %>%
+  dyRoller(rollPeriod = 7) %>% dyLegend(labelsSeparateLines = 1) %>% dyCSS(css="style_dygraph.css") 
 
 p.10M
 
